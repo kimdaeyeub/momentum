@@ -1,20 +1,32 @@
-const toggleTodoBtn = document.querySelector(".toggle__todo");
+const toggleTodoBtn = document.querySelector(".icon__btn");
 const todoBox = document.querySelector(".todo__box");
+const overlay = document.querySelector(".modal__overlay");
 let openTodoModal = false;
-
-toggleTodoBtn.addEventListener("click", toggleTodo);
 
 function toggleTodo() {
   if (openTodoModal) {
+    //모달 숨기기
     todoBox.classList.add("remove__modal");
     todoBox.classList.remove("modal__animation");
-    setTimeout(() => todoBox.classList.add("hidden"), 1000);
-    console.log("hidden");
+    setTimeout(() => todoBox.classList.add("hidden"), 300);
+    overlay.classList.add("hidden");
   } else {
+    //모달 보여주기
     todoBox.classList.remove("hidden");
+    overlay.classList.remove("hidden");
     todoBox.classList.add("modal__animation");
     todoBox.classList.remove("remove__modal");
-    console.log("No");
   }
   openTodoModal = !openTodoModal;
 }
+
+function onClickModalOverlay() {
+  console.log("CLick!!");
+  todoBox.classList.add("remove__modal");
+  todoBox.classList.remove("modal__animation");
+  setTimeout(() => todoBox.classList.add("hidden"), 300);
+  overlay.classList.add("hidden");
+}
+
+overlay.addEventListener("click", onClickModalOverlay);
+toggleTodoBtn.addEventListener("click", toggleTodo);
