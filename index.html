@@ -9,13 +9,25 @@
   <body class="body">
     <div class="blur">
       <h1 class="timer">00:00</h1>
-      <input type="text" placeholder="Search..." class="search__form" />
+      <form
+        method="get"
+        action="http://www.google.co.kr/search"
+        class="search__form"
+        target="_blank"
+      >
+        <input
+          type="text"
+          name="q"
+          placeholder="Search..."
+          class="search__input"
+        />
+      </form>
     </div>
     <nav class="navbar">
       <h1 class="navbar__title">Devlog</h1>
       <div class="navbar__items">
-        <a class="navbar__item">Naver</a>
-        <a class="navbar__item">Youtube</a>
+        <a class="navbar__item" href="https://www.naver.com/">Naver</a>
+        <a class="navbar__item" href="https://www.youtube.com/">Youtube</a>
       </div>
     </nav>
     <div class="modal__overlay hidden"></div>
@@ -24,24 +36,10 @@
         <div class="todo__headline">
           <input placeholder="할 일 추가하기" type="text" class="todo__input" />
           <div class="todo__add__btn">
-            <i class="fa-solid fa-plus"></i>
+            <span>Add</span>
           </div>
         </div>
-        <div class="todo__list">
-          <span>hello</span>
-        </div>
-        <div class="todo__list">
-          <span>hello</span>
-        </div>
-        <div class="todo__list">
-          <span>hello</span>
-        </div>
-        <div class="todo__list">
-          <span>hello</span>
-        </div>
-        <div class="todo__list">
-          <span>hello</span>
-        </div>
+        <div class="todo__body"></div>
       </div>
       <div class="icon__btn">
         <i class="fa-solid fa-list-ul"></i>
@@ -53,5 +51,6 @@
     crossorigin="anonymous"
   ></script>
   <script src="./index.js"></script>
+  <script src="./todo.js"></script>
   <script src="./clock.js"></script>
 </html>

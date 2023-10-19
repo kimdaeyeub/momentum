@@ -31,26 +31,24 @@
   color: white;
   font-weight: 800;
 }
-
 .search__form {
+  width: 40%;
+}
+.search__input {
   margin-top: 30px;
   background: transparent;
   border: none;
   outline: none;
   border-bottom: 2px solid white;
-  width: 40%;
+  width: 100%;
   padding: 20px;
   font-size: 20px;
   color: white;
 }
 
-.search__form::placeholder {
+.search__input::placeholder {
   color: white;
   font-size: 25px;
-}
-
-.search__form:focus {
-  border-bottom: 2px solid white;
 }
 
 .navbar {
@@ -68,6 +66,7 @@
   font-size: 23px;
   color: white;
   margin-left: 22px;
+  text-decoration: none;
 }
 
 .navbar__title {
@@ -157,11 +156,39 @@
 
 .todo__list {
   padding: 20px 20px;
-  min-height: 150px;
+  min-height: 100px;
   width: 100%;
   box-sizing: border-box;
   border-radius: 20px;
-  font-size: 17px;
+  font-size: 20px;
   background-color: white;
   margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  font-weight: 500;
+}
+
+.todo__list i {
+  border: none;
+  color: black;
+  font-size: 15px;
+}
+
+.todo__add__btn {
+  background-color: rgba(236, 233, 233, 0.267);
+  border: none;
+  color: rgb(210, 210, 210);
+  padding: 10px 15px;
+  font-size: 17px;
+  border-radius: 7px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.todo__body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
